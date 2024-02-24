@@ -1,0 +1,19 @@
+@import 'global';
+
+.submit_btn {
+    border: none;
+    background-color: var(--secondary-color);
+    padding: 0.8rem 4.6rem;
+    font-size: 3rem;
+    font-family: var(--main-font);
+    font-weight: 700;
+    color: var(--background-color);
+}
+  
+#signup_btn {
+    margin-bottom: 8rem;
+}
+  
+#login_btn {
+    margin-top: 4rem;
+}

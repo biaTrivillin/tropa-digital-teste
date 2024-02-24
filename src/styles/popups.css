@@ -1,0 +1,41 @@
+@import 'global';
+
+.popup_container {
+  position: absolute;
+  background-color: var(--background-color);
+  width: 62rem;
+  height: 63rem;
+  border-radius: 4rem;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto auto;
+  z-index: 1;
+  padding: 7.6rem 5.3rem 5.3rem 4.4rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 10px 10px 31px -10px rgba(0, 0, 0, 0.75);
+}
+.popup_container h1 {
+  font-size: 4.4rem;
+  color: var(--secondary-color);
+}
+.popup_container p, .popup_container a {
+  font-size: 2.2rem;
+  text-align: center;
+  font-weight: 400;
+}
+.popup_container a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+.popup_container button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
