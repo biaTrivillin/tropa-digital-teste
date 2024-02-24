@@ -16,7 +16,7 @@ function FormLogin() {
           </div>
           <div className='input_text_container'>
             <label htmlFor='password_login'>Senha</label>
-            <button><FaRegEye className='input_svg' /></button>
+            <button><FaRegEye className='input_svg' id='show_pass_btn' /></button>
             <input className="input_text" id="password_login" required='required' type="password" placeholder="Insira sua senha utilizando apenas números"></input>
           </div>
           <div className='input_radio_container'>
@@ -25,7 +25,9 @@ function FormLogin() {
           </div>
         </fieldset>
         <Button value="Entrar" id="login_btn" />
-        <button>Esqueceu a senha?</button>
+        <div className='forgot_pass_btn_container'>
+          <button>Esqueceu a senha?</button>
+        </div>
       </div>
     )
   

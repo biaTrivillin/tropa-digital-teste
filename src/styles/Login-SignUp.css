@@ -10,6 +10,8 @@
   flex-direction: column;
   justify-content: end;
   margin-bottom: 3.8rem;
+  opacity: 0;
+  animation: appear 1s ease-in-out 1s 1 forwards;
 }
 .form_content h1 {
   font-size: 8rem;
@@ -19,11 +21,25 @@
   font-size: 1.8rem;
   padding-top: 14rem;
 }
-.form_content .signup_link {
+.signup_link {
   color: var(--secondary-color);
   text-decoration: none;
+  position: relative;
 }
-.form_content .back_btn {
+.signup_link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0.1rem;
+  background-color: var(--secondary-color);
+  bottom: 0;
+  left: 0;
+  transition: 0.5s ease;
+}
+.signup_link:hover::after {
+  width: 100%;
+}
+.back_btn {
   padding-left: 9rem;
   display: flex;
   align-items: center;
@@ -31,6 +47,7 @@
   font-size: 1.8rem;
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 .form_content .back_btn svg {
   font-size: 1.8rem;

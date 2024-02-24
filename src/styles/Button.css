@@ -1,4 +1,5 @@
 @import 'global';
+@import 'animations';
 
 .submit_btn {
     border: none;
@@ -8,6 +9,9 @@
     font-family: var(--main-font);
     font-weight: 700;
     color: var(--background-color);
+    cursor: pointer;
+    opacity: 0;
+    animation: appear-pop 0.5s ease-in 2s 1 forwards;
 }
   
 #signup_btn {

@@ -8,7 +8,9 @@ function ConfirmEmailPopup () {
             <p>Para finalizar seu cadastro, enviamos um e-mail de confirmação para <a href="mailto:teste.tes@gmail.com">teste.tes@gmail.com</a>. Verifique sua caixa de entrada e clique no link “Confirmar E-mail”.</p> 
             <p>Caso não tenha recebido o e-mail clique em “Enviar e-mail novamente” que enviaremos um novo e-mail.</p>
             <Button value="Fechar" id="confirm_email_btn" />
-            <button>Enviar e-mail novamente</button>
+            <div className='send_email_btn_container'>
+                <button>Enviar e-mail novamente</button>
+            </div>
         </div>
     )
 }

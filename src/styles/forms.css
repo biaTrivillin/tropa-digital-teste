@@ -65,10 +65,31 @@
 .input_text:focus {
   outline: none;
 }
+.forgot_pass_btn_container{
+  position: relative;
+}
 .form_container button {
+  margin-top: 1rem;
   font-size: 1.8rem;
   color: var(--secondary-color);
   border: none;
   background-color: transparent;
   font-family: var(--main-font);
+  cursor: pointer;
+}
+.form_container button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  left: 0;
+  height: 0.1rem;
+  background-color: var(--secondary-color);
+  bottom: 0;
+  transition: 0.5s ease;
+}
+.form_container button:hover::after {
+  width: 100%;
+}
+#show_pass_btn {
+  cursor: pointer;
 }

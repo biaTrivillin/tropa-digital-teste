@@ -1,4 +1,5 @@
 @import 'global';
+@import 'animations';
 
 .popup_container {
   position: absolute;
@@ -18,6 +19,7 @@
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 10px 10px 31px -10px rgba(0, 0, 0, 0.75);
+  animation: appear-pop 0.3s ease-in 1 forwards;
 }
 .popup_container h1 {
   font-size: 4.4rem;
@@ -38,4 +40,25 @@
   font-size: 1.8rem;
   color: var(--text-color);
   font-weight: 500;
+  cursor: pointer;
+}
+.cancel_btn_container, .send_email_btn_container{
+    position: relative;
+}
+.popup_container button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  left: 0;
+  height: 0.1rem;
+  background-color: var(--text-color);
+  bottom: 0;
+  transition: 0.5s ease;
+}
+.popup_container button:hover::after {
+  width: 100%;
+}
+.popup_input_text_container {
+    width: 100%;
+    margin-top: 0;
 }
