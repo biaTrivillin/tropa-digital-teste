@@ -24,7 +24,7 @@
   font-weight: 700;
   color: var(--secondary-color);
   font-size: 4rem;
-  margin-top: 4.7rem;
+  margin-top: 3rem;
 }
 .input_text_container::after {
   content: "";
@@ -34,12 +34,23 @@
   background-color: var(--secondary-color);
   bottom: 0;
 }
-.input_text_container svg {
+.input_text_container button {
+  position: absolute;
+  bottom: 0.1rem;
+  right: 0;
+}
+.input_svg {
   color: var(--text-color);
   font-size: 2rem;
   position: absolute;
   bottom: 0.1rem;
   right: 0;
+  opacity: 0;
+}
+.input_svg {
+  color: var(--text-color);
+  font-size: 2rem;
+  opacity: 0;
 }
 .input_radio_container {
   display: flex;
@@ -99,6 +110,9 @@
   font-size: 1.2rem;
   opacity: 0;
 }
-.show_error{
+.show{
   opacity: 1;
+}
+.hide {
+  opacity: 0;
 }
