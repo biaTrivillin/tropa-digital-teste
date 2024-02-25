@@ -4,11 +4,12 @@
   background-image: url(../assets/imgs/presentation.png);
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 0 0 6.7rem 7.4rem;
+  padding: 0 6.7rem 6.7rem 7.4rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  animation: slide-in 2s ease-in-out 1 forwards;
+  animation: slide-in 1.5s ease-in-out 1 forwards;
 }
 .presentation_content h1 {
   font-size: 4.6rem;

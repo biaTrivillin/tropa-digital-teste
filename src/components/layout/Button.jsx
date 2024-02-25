@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 function Button (props) {
     
     return (
-        <input className="submit_btn" type="submit" id={props.id} value={props.value}></input>
+        <div className='btn_container'>
+            <input className="submit_btn" type="submit" id={props.id} value={props.value}></input>
+        </div>
     )
 }
 

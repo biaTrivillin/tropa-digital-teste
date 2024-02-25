@@ -4,8 +4,10 @@
 .popup_container {
   position: absolute;
   background-color: var(--background-color);
+  /* width: 45%; */
   width: 62rem;
-  height: 63rem;
+  height: 62rem;
+  /* height: 60%; */
   border-radius: 4rem;
   top: 0;
   bottom: 0;
@@ -61,4 +63,19 @@
 .popup_input_text_container {
     width: 100%;
     margin-top: 0;
+}
+
+
+@media (max-height: 900px) {
+    .popup_container h1 {
+        font-size: 3.5rem;
+    }
+    .popup_container p, .popup_container a, .popup_container button {
+        font-size: 1.5rem;
+    }
+    .popup_container {
+        height: 50rem;
+        width: 50rem;
+    }
+
 }

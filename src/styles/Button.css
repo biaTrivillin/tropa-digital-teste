@@ -10,14 +10,29 @@
     font-weight: 700;
     color: var(--background-color);
     cursor: pointer;
+}
+.btn_container {
     opacity: 0;
     animation: appear-pop 0.5s ease-in 2s 1 forwards;
 }
-  
+.submit_btn:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+.submit_btn:active {
+    transform: scale(1);
+    transition: none;
+}
 #signup_btn {
     margin-bottom: 8rem;
 }
-  
 #login_btn {
     margin-top: 4rem;
+}
+
+
+@media (max-height: 900px) {
+    #confirm_email_btn, #forgot_pass_btn{
+        font-size: 2rem;
+    }
 }

@@ -8,8 +8,9 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
   margin-bottom: 3.8rem;
+  margin-top: 8.5rem;
   opacity: 0;
   animation: appear 1s ease-in-out 1s 1 forwards;
 }
@@ -45,9 +46,19 @@
   align-items: center;
   align-self: flex-start;
   font-size: 1.8rem;
+  color: var(--text-color);
+  background-color: transparent;
   border: none;
-  background: transparent;
   cursor: pointer;
+}
+.back_btn:hover {
+  color: var(--secondary-color);
+}
+.back_btn:hover svg {
+  animation: is-bouncing 1s ease-in-out infinite forwards;
+}
+.back_btn:active {
+  transform: scale(0.9);
 }
 .form_content .back_btn svg {
   font-size: 1.8rem;

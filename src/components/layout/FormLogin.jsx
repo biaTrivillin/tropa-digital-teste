@@ -23,6 +23,7 @@ function FormLogin() {
             <input id="radio_login" type="radio"></input>
             <label htmlFor="radio_login">Lembrar e-mail e senha</label>
           </div>
+          <span>Login ou senha incorretos</span>
         </fieldset>
         <Button value="Entrar" id="login_btn" />
         <div className='forgot_pass_btn_container'>
