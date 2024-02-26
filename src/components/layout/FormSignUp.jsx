@@ -9,30 +9,22 @@ function FormSignUp() {
   const [showPasswordTypePass, setShowPasswordTypePass] = useState('password')
   const [showPasswordTypeConfirm, setShowPasswordTypeConfirm] = useState('password')
 
-  const [showPasswordSvg, setShowPasswordSvg] = useState('input_svg')
-  const [showPasswordConfirmSvg, setShowPasswordConfirmSvg] = useState('input_svg')
-  
-  const [hidePasswordSvg, setHidePasswordSvg] = useState('input_svg show')
-  const [hidePasswordConfirmSvg, setHidePasswordConfirmSvg] = useState('input_svg show')
+  const [showPasswordSvg, setShowPasswordSvg] = useState(false)
+  const [showPasswordConfirmSvg, setShowPasswordConfirmSvg] = useState(false)
 
   const passwordArrays = { 
     'passwordType': [ showPasswordTypePass, showPasswordTypeConfirm],
     'setPasswordType': [ setShowPasswordTypePass, setShowPasswordTypeConfirm],
     'showPasswordSvg': [ showPasswordSvg, showPasswordConfirmSvg],
     'setShowPasswordSvg': [ setShowPasswordSvg, setShowPasswordConfirmSvg],
-    'hidePasswordSvg': [ hidePasswordSvg, hidePasswordConfirmSvg],
-    'setHidePasswordSvg': [ setHidePasswordSvg, setHidePasswordConfirmSvg],
   };
 
   const showPassword = (indice) => {
     if(passwordArrays.passwordType[indice] !== 'text') passwordArrays.setPasswordType[indice]('text')
     else passwordArrays.setPasswordType[indice]('password')
 
-    if(passwordArrays.showPasswordSvg[indice] !== 'input_svg show') passwordArrays.setShowPasswordSvg[indice]('input_svg show')
-    else passwordArrays.setShowPasswordSvg[indice]('input_svg')
-
-    if(passwordArrays.hidePasswordSvg[indice] !== 'input_svg') passwordArrays.setHidePasswordSvg[indice]('input_svg')
-    else passwordArrays.setHidePasswordSvg[indice]('input_svg show')
+    if(passwordArrays.showPasswordSvg[indice] !== true) passwordArrays.setShowPasswordSvg[indice](true)
+    else passwordArrays.setShowPasswordSvg[indice](false)
   }
 
 
@@ -186,13 +178,13 @@ function FormSignUp() {
         <span className={emailError}>Esse e-mail é inválido</span>
         <div className='input_text_container'>
           <label htmlFor='password_signup'>Senha</label>
-          <button onClick={() => {showPassword(0)}}><FaRegEye className={showPasswordSvg} /><FaRegEyeSlash className={hidePasswordSvg} /></button>
+          <button type="button" onClick={() => {showPassword(0)}}>{showPasswordSvg ? <FaRegEye className='input_svg' /> : <FaRegEyeSlash className="input_svg" />}</button>
           <input value={passwordInformation} onChange={passwordValidation} className="input_text" id="password_signup" type={showPasswordTypePass} placeholder="Insira sua senha utilizando apenas números"></input>
         </div>
         <span className={passwordError}>Apenas números são permitidos nesse campo</span>
         <div className='input_text_container'>
           <label htmlFor='password_confirm_signup'>Confirmar senha</label>
-          <button onClick={() => {showPassword(1)}}><FaRegEye className={showPasswordConfirmSvg} /><FaRegEyeSlash className={hidePasswordConfirmSvg} /></button>
+          <button type="button" onClick={() => {showPassword(1)}}>{showPasswordConfirmSvg ? <FaRegEye className='input_svg' /> : <FaRegEyeSlash className="input_svg" />}</button>
           <input value={passConfirmInformation} onChange={passConfirmValidation} className="input_text" id="password_confirm_signup" type={showPasswordTypeConfirm} placeholder="Repita a senha criada anteriormente"></input>
         </div>
         <span className={passCornfirmError}>As senhas não correspondem</span>
