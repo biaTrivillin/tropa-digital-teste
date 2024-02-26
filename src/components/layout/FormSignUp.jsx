@@ -157,6 +157,18 @@ function FormSignUp() {
     if((nameValid || emailValid || passwordValid || passwordConfirmValid || termsValid) !== true) console.log('ruim')
     else console.log('show')
 
+    let userList = JSON.parse(localStorage.getItem('userList') || '[]')
+
+      userList.push(
+          {
+              name: nameInformation,
+              email: emailInformation,
+              password: passwordInformation,
+          }
+      )
+
+      localStorage.setItem('userList', JSON.stringify(userList))
+
   }
   
   return (
