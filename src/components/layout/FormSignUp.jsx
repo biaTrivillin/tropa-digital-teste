@@ -48,6 +48,13 @@ function FormSignUp() {
   const [passCornfirmError, setPassConfirmError] = useState('error')
   const [termsError, setTermsError] = useState('error')
   const [nameError, setNameError] = useState('error')
+  const [emptyError, setEmptyError] = useState('error')
+
+  const [nameValid, setNameValid] = useState(false)
+  const [emailValid, setEmailValid] = useState(false)
+  const [passwordValid, setPasswordValid] = useState(false)
+  const [passwordConfirmValid, setPasswordConfirmValid] = useState(false)
+  const [termsValid, setTermsValid] = useState(false)
 
 
   const nameValidation = (event) => {
@@ -62,8 +69,10 @@ function FormSignUp() {
 
     if(checkEmail(name) !== true) {
       setNameError('error show')
+      setNameValid(false)
     } else {
       setNameError('error')
+      setNameValid(true)
     }
     
   }
@@ -80,8 +89,10 @@ function FormSignUp() {
 
     if(checkEmail(email) !== true) {
       setEmailError('error show')
+      setEmailValid(false)
     } else {
       setEmailError('error')
+      setEmailValid(true)
     }
     
   }
@@ -98,8 +109,10 @@ function FormSignUp() {
 
     if(checkPassword(password) !== true) {
       setPasswordError('error show')
+      setPasswordValid(false)
     } else {
       setPasswordError('error')
+      setPasswordValid(true)
     }
   }
 
@@ -110,46 +123,65 @@ function FormSignUp() {
 
     if(passwordConfim !== passwordInformation) {
       setPassConfirmError('error show')
+      setPasswordConfirmValid(true)
     } else {
       setPassConfirmError('error')
+      setPasswordConfirmValid(false)
     }
   }
 
-  const termsValidation = (event) => {
+  
+
+  const termsValidation = (event) => { //colocar dentro da handle submit 
     setTermsInformation(event.target.checked)
 
     let terms = event.target.checked
 
     if(terms !== true) {
       setTermsError('error show')
+      setTermsValid(true)
     } else {
       setTermsError('error')
+      setTermsValid(false)
     }
+
+    console.log(termsValid)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if((nameInformation && emailInformation && passwordInformation && passConfirmInformation ) !== '')setEmptyError('error')
+    else setEmptyError('error show')
+
+    if((nameValid || emailValid || passwordValid || passwordConfirmValid || termsValid) !== true) console.log('ruim')
+    else console.log('show')
+
   }
   
   return (
-    <div className='form_container'>
-      <fieldset className="inputs_container">
+    <form onSubmit={(e) => {handleSubmit(e)}} className='form_container'>
+      <div className="inputs_container">
         <div className='input_text_container'>
           <label htmlFor='name_signup'>Nome</label>
-          <input value={nameInformation} onChange={nameValidation} className="input_text" id="name_signup" required='required' type="text" placeholder="Insira seu nome"></input>
+          <input value={nameInformation} onChange={nameValidation} className="input_text" id="name_signup" type="text" placeholder="Insira seu nome"></input>
         </div>
         <span className={nameError}>Seu nome deve conter apenas letras</span>
         <div className='input_text_container'>
           <label htmlFor='email_signup'>E-mail</label>
-          <input value={emailInformation} onChange={emailValidation} className="input_text" id="email_signup" required='required' type="text" placeholder="Insira seu e-mail"></input>
+          <input value={emailInformation} onChange={emailValidation} className="input_text" id="email_signup" type="text" placeholder="Insira seu e-mail"></input>
         </div>
         <span className={emailError}>Esse e-mail é inválido</span>
         <div className='input_text_container'>
           <label htmlFor='password_signup'>Senha</label>
           <button onClick={() => {showPassword(0)}}><FaRegEye className={showPasswordSvg} /><FaRegEyeSlash className={hidePasswordSvg} /></button>
-          <input value={passwordInformation} onChange={passwordValidation} className="input_text" id="password_signup" required='required' type={showPasswordTypePass} placeholder="Insira sua senha utilizando apenas números"></input>
+          <input value={passwordInformation} onChange={passwordValidation} className="input_text" id="password_signup" type={showPasswordTypePass} placeholder="Insira sua senha utilizando apenas números"></input>
         </div>
         <span className={passwordError}>Apenas números são permitidos nesse campo</span>
         <div className='input_text_container'>
           <label htmlFor='password_confirm_signup'>Confirmar senha</label>
           <button onClick={() => {showPassword(1)}}><FaRegEye className={showPasswordConfirmSvg} /><FaRegEyeSlash className={hidePasswordConfirmSvg} /></button>
-          <input value={passConfirmInformation} onChange={passConfirmValidation} className="input_text" id="password_confirm_signup" required='required' type={showPasswordTypeConfirm} placeholder="Repita a senha criada anteriormente"></input>
+          <input value={passConfirmInformation} onChange={passConfirmValidation} className="input_text" id="password_confirm_signup" type={showPasswordTypeConfirm} placeholder="Repita a senha criada anteriormente"></input>
         </div>
         <span className={passCornfirmError}>As senhas não correspondem</span>
         <div className='input_radio_container'>
@@ -161,9 +193,10 @@ function FormSignUp() {
           <input id="radio_remember_information" type="checkbox"></input>
           <label htmlFor="radio_remember_information">Lembrar e-mail e senha</label>
         </div>
-      </fieldset>
-      <Button value="Cadastrar" id="signup_btn" />
-    </div>
+        <span className={emptyError}>Você deve preencher todos os campos para continuar</span>
+      </div>
+      <Button value='Enviar' id="signup_btn" />
+    </form>
   )
 
 }

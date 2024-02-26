@@ -46,9 +46,6 @@ function FormLogin() {
           <span>Login ou senha incorretos</span>
         </fieldset>
         <Button value="Entrar" id="login_btn" />
-        <div className='forgot_pass_btn_container'>
-          <button>Esqueceu a senha?</button>
-        </div>
       </div>
     )
   

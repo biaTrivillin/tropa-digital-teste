@@ -1,10 +1,18 @@
 import '../../styles/popups.css'
 import Button from './Button'
 import { FaRegEnvelope } from "react-icons/fa";
+import { useState } from 'react';
 
 function ForgotPasswordPopup () {
+
+    const [popupStyle, setPopupStyle] = useState('popup_container show')
+
+    const blabla = () => {
+        setPopupStyle('popup_container hide')
+    }
+
     return (
-        <div className='popup_container'>
+        <div className={popupStyle}>
             <h1>Esqueci minha senha</h1>
             <p>Para redefinir sua senha, informe o e-mail cadastrado na sua conta e lhe enviaremos um link com as instruções.</p>
             <div className='input_text_container popup_input_text_container'>
@@ -14,7 +22,7 @@ function ForgotPasswordPopup () {
             </div>
             <Button value="Enviar" id="forgot_pass_btn" />
             <div className='cancel_btn_container'>
-                <button>Cancelar</button>
+                <button onClick={blabla}>Cancelar</button>
             </div>
         </div>
     )
