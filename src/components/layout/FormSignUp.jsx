@@ -151,19 +151,22 @@ function FormSignUp() {
     if((nameInformation && emailInformation && passwordInformation && passConfirmInformation ) !== '')setEmptyError('error')
     else setEmptyError('error show')
 
-    if((nameValid && emailValid && passwordValid && passwordConfirmValid && termsValid) !== false) window.location.href = '/'
+    if((nameValid && emailValid && passwordValid && passwordConfirmValid && termsValid) !== false) {
+      
+      window.location.href = '/'
 
-    let userList = JSON.parse(localStorage.getItem('userList') || '[]')
+      let userList = JSON.parse(localStorage.getItem('userList') || '[]')
 
-      userList.push(
-          {
-              name: nameInformation,
-              email: emailInformation,
-              password: passwordInformation,
-          }
-      )
+        userList.push(
+            {
+                name: nameInformation,
+                email: emailInformation,
+                password: passwordInformation,
+            }
+        )
 
-      localStorage.setItem('userList', JSON.stringify(userList))
+        localStorage.setItem('userList', JSON.stringify(userList))
+    }
 
   }
   

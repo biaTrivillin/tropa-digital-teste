@@ -67,6 +67,8 @@ function FormLogin() {
 
     let passwordLogin = e.target.value
 
+    let token = Math.random().toString(10);
+
     // let userValid = {
     //   nameValid: 'name',
     //   passwordValid: 'password',
@@ -75,16 +77,17 @@ function FormLogin() {
     userList.forEach((item) => {
       if((emailLoginInformation == item.email ) && (passwordLogin == item.password)) {
         setPasswordLoginValid(true)
-        setErrorMessage('Login ou senha incorretos')
+        localStorage.setItem('token', token);
+        // setErrorMessage('Login ou senha incorretos')
       } else {
         setPasswordLoginValid(false)
-        setErrorMessage('Você deve preencher todos os campos para continuar')
+        // setErrorMessage('Você deve preencher todos os campos para continuar')
       }
     })
 
     userList.forEach(() => {
       if((emailLoginInformation == '' ) || (passwordLogin == '')) {
-        setErrorMessage('Login ou senha incorretos Você deve preencher todos os campos para continuar')
+        setErrorMessage('Você deve preencher todos os campos para continuar')
       } else {
         setErrorMessage('Email ou senha incorretos')
       }
@@ -101,6 +104,7 @@ function FormLogin() {
     if(emailLoginValid && passwordLoginValid){
       console.log('logouuu!')
       setErrorMessageStyle('error')
+      window.location.href = '/dashboard'
     } else {
       setErrorMessageStyle('error show')
     }
