@@ -31,7 +31,7 @@ function FormSignUp() {
   const [emailInformation, setEmailInformation] = useState('')
   const [passwordInformation, setPasswordInformation] = useState('')
   const [passConfirmInformation, setPassConfirmInformation] = useState('')
-  const [termsInformation, setTermsInformation] = useState('')
+  // const [termsInformation, setTermsInformation] = useState('')
   const [nameInformation, setNameInformation] = useState('')
 
 
@@ -115,39 +115,43 @@ function FormSignUp() {
 
     if(passwordConfim !== passwordInformation) {
       setPassConfirmError('error show')
-      setPasswordConfirmValid(true)
+      setPasswordConfirmValid(false)
     } else {
       setPassConfirmError('error')
-      setPasswordConfirmValid(false)
+      setPasswordConfirmValid(true)
     }
   }
 
   
 
   const termsValidation = (event) => { //colocar dentro da handle submit 
-    setTermsInformation(event.target.checked)
+    // setTermsInformation(event.target.checked)
 
     let terms = event.target.checked
 
     if(terms !== true) {
-      setTermsError('error show')
-      setTermsValid(true)
-    } else {
-      setTermsError('error')
       setTermsValid(false)
+    } else {
+      setTermsValid(true)
     }
 
-    console.log(termsValid)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
+    if(termsValid !== true) {
+      setTermsError('error show')
+    } else {
+      setTermsError('error')
+    }
+
+    console.log(nameValid, emailValid, passwordValid, passwordConfirmValid, termsValid)
+
     if((nameInformation && emailInformation && passwordInformation && passConfirmInformation ) !== '')setEmptyError('error')
     else setEmptyError('error show')
 
-    if((nameValid || emailValid || passwordValid || passwordConfirmValid || termsValid) !== true) console.log('ruim')
-    else console.log('show')
+    if((nameValid && emailValid && passwordValid && passwordConfirmValid && termsValid) !== false) window.location.href = '/'
 
     let userList = JSON.parse(localStorage.getItem('userList') || '[]')
 
@@ -189,7 +193,7 @@ function FormSignUp() {
         </div>
         <span className={passCornfirmError}>As senhas não correspondem</span>
         <div className='input_radio_container'>
-          <input value={termsInformation} onChange={termsValidation} id="radio_terms" type="checkbox"></input>
+          <input onBlur={termsValidation} id="radio_terms" type="checkbox"></input>
           <label htmlFor="radio_terms">Li e Concordo com os <a>Termos e Condições</a></label>
         </div>
         <span className={termsError}>Você deve concordar com os termos para continuar</span>

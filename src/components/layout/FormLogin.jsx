@@ -36,7 +36,8 @@ function FormLogin() {
   // const [passwordLogin, setPasswordLogin] = useState('')
   const [emailLoginValid, setEmailLoginValid] = useState('')
   const [passwordLoginValid, setPasswordLoginValid] = useState('')
-  const [errorMessage, setErrorMessage] = useState('error')
+  const [errorMessageStyle, setErrorMessageStyle] = useState('error')
+  const [errorMessage, setErrorMessage] = useState('Você deve preencher todos os campos para continuar')
 
   let userList = JSON.parse(localStorage.getItem('userList'))
 
@@ -74,8 +75,18 @@ function FormLogin() {
     userList.forEach((item) => {
       if((emailLoginInformation == item.email ) && (passwordLogin == item.password)) {
         setPasswordLoginValid(true)
+        setErrorMessage('Login ou senha incorretos')
       } else {
         setPasswordLoginValid(false)
+        setErrorMessage('Você deve preencher todos os campos para continuar')
+      }
+    })
+
+    userList.forEach(() => {
+      if((emailLoginInformation == '' ) || (passwordLogin == '')) {
+        setErrorMessage('Login ou senha incorretos Você deve preencher todos os campos para continuar')
+      } else {
+        setErrorMessage('Email ou senha incorretos')
       }
     })
 
@@ -89,9 +100,9 @@ function FormLogin() {
 
     if(emailLoginValid && passwordLoginValid){
       console.log('logouuu!')
-      setErrorMessage('error')
+      setErrorMessageStyle('error')
     } else {
-      setErrorMessage('error show')
+      setErrorMessageStyle('error show')
     }
 
     console.log(emailLoginValid)
@@ -117,7 +128,7 @@ function FormLogin() {
             <input id="radio_login" type="radio"></input>
             <label htmlFor="radio_login">Lembrar e-mail e senha</label>
           </div>
-          <span className={errorMessage}>Login ou senha incorretos</span>
+          <span className={errorMessageStyle}>{errorMessage}</span>
         </fieldset>
         <Button value="Entrar" id="login_btn" />
       </form>

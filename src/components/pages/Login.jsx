@@ -1,5 +1,4 @@
 import FormLogin from "../layout/FormLogin";
-import { Link } from "react-router-dom";
 import PresentationSection from "../layout/PresentationSection";
 import ForgotPasswordPopup from "../layout/ForgotPasswordPopup";
 import '../../styles/Login-SignUp.css'
@@ -27,7 +26,7 @@ function Login() {
           <div className='forgot_pass_btn_container'>
             <button onClick={showForgotPassPopup}>Esqueceu a senha?</button>
           </div>
-          <p>Novo por aqui? <Link className="signup_link" to='/cadastro'>Cadastre-se</Link></p>
+          <p>Novo por aqui? <a href="/cadastro" className="signup_link">Cadastre-se</a></p>
         </div>
       </div>
     )
