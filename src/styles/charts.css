@@ -3,8 +3,8 @@
 .chart_container{
     background-color: var(--background-color);
     padding: 1.8rem;
+    border-radius: 1.8rem;
 }
-
 .chart_container h3 {
     font-size: 1rem;
     color: var(--secondary-text-color);
@@ -22,12 +22,25 @@
     font-size: 0.9rem;
     font-weight: 400;
     color: var(--text-color);
+    margin-top: 0.6rem;
+}
+.chart_container h4::after {
+    content: '';
+    position: absolute;
+    height: 0.2rem;
+    width: 115%;
+    background-color: var(--dashboard-bg-color);
+    bottom: -1.5rem;
+    left: -2rem;
+}
+.chart_container h4:nth-child(3):after {
+    width: 105%;
 }
 .information_icon {
     position: absolute;
     right: 0;
     top: 0;
-    font-size: 1rem;
+    font-size: 2rem;
     color: var(--secondary-text-color);
     cursor: pointer;
 }
@@ -36,4 +49,10 @@
 }
 #two_bar {
     grid-area: 2/1/3/4;
+}
+.chart_img_container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -19,7 +19,7 @@ function ForgotPasswordPopup ({showForgotPassPopup}) {
             <p>Para redefinir sua senha, informe o e-mail cadastrado na sua conta e lhe enviaremos um link com as instruções.</p>
             <div className='input_text_container popup_input_text_container'>
                 <label htmlFor='email_forgot_pass'>E-mail</label>
-                <button><FaRegEnvelope className='input_svg' /></button>
+                <FaRegEnvelope className='input_svg' />
                 <input className="input_text" id="email_forgot_pass" type="text" placeholder="Insira seu e-mail"></input>
             </div>
             <Button value="Enviar" id="forgot_pass_btn" />

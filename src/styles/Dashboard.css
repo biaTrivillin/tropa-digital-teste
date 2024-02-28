@@ -8,8 +8,7 @@
     flex-direction: column;
     align-items: center;
     gap: 2.7rem;
-    /* justify-content: space-between; */
-    padding: 6rem 6rem 0 14rem;
+    padding: 6rem 6rem 6rem 14rem;
 }
 .dashboard_title {
     font-family: var(--main-font);
@@ -50,10 +49,8 @@
 }
 .charts_container {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
-    grid-template-rows: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.3fr 1fr;
+    grid-template-rows: 1fr 1.2fr;
     gap: 4rem;
     min-width: 100%;
-    /* margin-bottom: 6rem; */
-    /* margin: 0 8rem; */
 }

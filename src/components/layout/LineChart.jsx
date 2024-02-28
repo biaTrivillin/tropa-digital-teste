@@ -1,5 +1,7 @@
 import { IoIosInformationCircle } from "react-icons/io";
 import '../../styles/charts.css'
+import lineChartImg from '../../assets/imgs/line-chart.png'
+
 
 function LineChart () {
     
@@ -11,8 +13,8 @@ function LineChart () {
                 <h2>5.987,37</h2>
                 <h4>LoremIpsum</h4>
             </div>
-            <div>
-                <canvas></canvas>
+            <div className="chart_img_container">
+                <img src={lineChartImg}/>
             </div>
         </div>
     )
