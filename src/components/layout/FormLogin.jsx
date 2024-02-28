@@ -77,7 +77,16 @@ function FormLogin() {
     userList.forEach((item) => {
       if((emailLoginInformation == item.email ) && (passwordLogin == item.password)) {
         setPasswordLoginValid(true)
+
+        let user = JSON.parse(localStorage.getItem('user'))
+
+        user = {
+          email: item.email,
+          name: item.name
+        }
+
         localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(user));
         // setErrorMessage('Login ou senha incorretos')
       } else {
         setPasswordLoginValid(false)

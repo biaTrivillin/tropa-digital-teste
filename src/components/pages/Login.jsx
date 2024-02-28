@@ -7,18 +7,17 @@ import { useState } from "react";
 function Login() {
 
   const [showPopup, setShowPopup] = useState(false)
-  const [clickCount, setClickCount] = useState(0)
+
 
   const showForgotPassPopup = () => {
-    setShowPopup(true)
-
-    setClickCount(clickCount + 1)
+    if(showPopup !== true) setShowPopup(true)
+    else setShowPopup(false)
 
   }
 
     return (
       <div className="content">
-        {showPopup && <ForgotPasswordPopup showForgotPassPopup={showPopup} />}  
+        {showPopup && <ForgotPasswordPopup showForgotPassPopup={showForgotPassPopup}/>}  
         <PresentationSection/>
         <div className="form_content">
           <h1>Login</h1>
