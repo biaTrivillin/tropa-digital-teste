@@ -4,6 +4,19 @@
     background-color: var(--background-color);
     padding: 1.8rem;
     border-radius: 1.8rem;
+    opacity: 0;
+}
+.chart_container:nth-child(1){
+    animation: appear-pop 0.5s ease 0.5s 1 forwards;
+}
+.chart_container:nth-child(2){
+    animation: appear-pop 0.5s ease 1s 1 forwards;
+}
+.chart_container:nth-child(3){
+    animation: appear-pop 0.5s ease 1.5s 1 forwards;
+}
+.chart_container:nth-child(4){
+    animation: appear-pop 0.5s ease 2s 1 forwards;
 }
 .chart_container h3 {
     font-size: 1rem;
@@ -21,7 +34,7 @@
     font-family: var(--dashboard-font);
     font-size: 0.9rem;
     font-weight: 400;
-    color: var(--text-color);
+    color: #4F4F4F;
     margin-top: 0.6rem;
 }
 .chart_container h4::after {
@@ -41,7 +54,7 @@
     right: 0;
     top: 0;
     font-size: 2rem;
-    color: var(--secondary-text-color);
+    color: #BDBDBD;
     cursor: pointer;
 }
 .information_chart_container {

@@ -20,11 +20,17 @@ function Menu() {
     const [itemStyleFive, setItemStyleFive] = useState('item_unclicked');
 
     const [showMenuInformationStyle, setShowMenuInformationStyle] = useState('menu_list hide_information');
+    const [showUserName, setShowUserName] = useState('hide_information');
     const [showMenuStyle, setShowMenuStyle] = useState('menu_container hide_menu');
+
+    const [selecStyle, setSelectStyle] = useState('select_style');
 
     const showMenu = () => {
         if (showMenuInformationStyle !== 'menu_list show_information') setShowMenuInformationStyle('menu_list show_information');
         else setShowMenuInformationStyle('menu_list hide_information');
+
+        if (showUserName !== 'show_information') setShowUserName('show_information');
+        else setShowUserName('hide_information');
 
         if (showMenuStyle !== 'menu_container appear_menu') setShowMenuStyle('menu_container appear_menu');
         else setShowMenuStyle('menu_container hide_menu');
@@ -42,6 +48,8 @@ function Menu() {
         itemArray.forEach((element) => element('item_unclicked'));
 
         itemArray[indice]('item_clicked');
+
+        setSelectStyle('')
     }
   
   
@@ -50,13 +58,13 @@ function Menu() {
             <div>
                 <div className="user_information">
                     <button onClick={showMenu} className="menu_btn"><FaBars /></button>
-                    <h1>{user.name}</h1>
-                    <h2>{user.email}</h2>
+                    <h1 className={showUserName}>{user.name}</h1>
+                    <h2 className={showUserName}>{user.email}</h2>
                     <img src={userImg} alt="" />
                 </div>
                 <div className="menu_information">
                     <ul className={showMenuInformationStyle}>
-                        <li className="menu_item"><a className={itemStyleOne} onClick={() => {changeItemStyle(0)}}><LuLayoutPanelLeft />Dashboard</a></li>
+                        <li className="menu_item"><a id={selecStyle} className={itemStyleOne} onClick={() => {changeItemStyle(0)}}><LuLayoutPanelLeft />Dashboard</a></li>
                     </ul>
                     <ul className={showMenuInformationStyle}>
                         <li className="menu_item"><a className={itemStyleTwo} onClick={() => {changeItemStyle(1)}}><LuFilePlus />LoremIpsum</a></li>

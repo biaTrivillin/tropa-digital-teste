@@ -89,3 +89,7 @@
 .mail_svg{
   cursor: default;
 }
+.check_svg {
+  color: green;
+  cursor: default;
+}

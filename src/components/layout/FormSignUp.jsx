@@ -4,6 +4,7 @@ import Button from './Button';
 import { useState } from 'react';
 import '../../styles/forms.css'
 import PropTypes from 'prop-types';
+import { FaCheck } from "react-icons/fa6";
 
 
 function FormSignUp({showConfirmEmailPopup}) {
@@ -166,11 +167,13 @@ function FormSignUp({showConfirmEmailPopup}) {
       <div className="inputs_container">
         <div className='input_text_container'>
           <label htmlFor='name_signup'>Nome</label>
+          {nameValid && <FaCheck className='input_svg check_svg' />}
           <input value={nameInformation} onChange={nameValidation} className="input_text" id="name_signup" type="text" placeholder="Insira seu nome"></input>
         </div>
         <span className={nameError}>Seu nome deve conter apenas letras</span>
         <div className='input_text_container'>
           <label htmlFor='email_signup'>E-mail</label>
+          {emailValid && <FaCheck className='input_svg check_svg' />}
           <input value={emailInformation} onChange={emailValidation} className="input_text" id="email_signup" type="text" placeholder="Insira seu e-mail"></input>
         </div>
         <span className={emailError}>Esse e-mail é inválido</span>

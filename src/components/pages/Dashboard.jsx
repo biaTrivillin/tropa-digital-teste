@@ -22,7 +22,7 @@ function Dashboard() {
           <nav className="search_bar_container">
             <FaMagnifyingGlass className="search_icon"/>
             <input id="search_bar" placeholder="Pesquisar" type="text" />
-            <GoBell />
+            <GoBell className="bell_icon"/>
           </nav>
           <h1 className="dashboard_title">Dashboard</h1>
           <div className="charts_container">
