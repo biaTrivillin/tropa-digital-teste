@@ -8,11 +8,11 @@ import PropTypes from 'prop-types';
 
 function FormSignUp({showConfirmEmailPopup}) {
 
-  const [showPasswordTypePass, setShowPasswordTypePass] = useState('password')
-  const [showPasswordTypeConfirm, setShowPasswordTypeConfirm] = useState('password')
+  const [showPasswordTypePass, setShowPasswordTypePass] = useState('password');
+  const [showPasswordTypeConfirm, setShowPasswordTypeConfirm] = useState('password');
 
-  const [showPasswordSvg, setShowPasswordSvg] = useState(false)
-  const [showPasswordConfirmSvg, setShowPasswordConfirmSvg] = useState(false)
+  const [showPasswordSvg, setShowPasswordSvg] = useState(false);
+  const [showPasswordConfirmSvg, setShowPasswordConfirmSvg] = useState(false);
 
   const passwordArrays = { 
     'passwordType': [ showPasswordTypePass, showPasswordTypeConfirm],
@@ -22,39 +22,38 @@ function FormSignUp({showConfirmEmailPopup}) {
   };
 
   const showPassword = (indice) => {
-    if(passwordArrays.passwordType[indice] !== 'text') passwordArrays.setPasswordType[indice]('text')
-    else passwordArrays.setPasswordType[indice]('password')
+    if(passwordArrays.passwordType[indice] !== 'text') passwordArrays.setPasswordType[indice]('text');
+    else passwordArrays.setPasswordType[indice]('password');
 
-    if(passwordArrays.showPasswordSvg[indice] !== true) passwordArrays.setShowPasswordSvg[indice](true)
-    else passwordArrays.setShowPasswordSvg[indice](false)
+    if(passwordArrays.showPasswordSvg[indice] !== true) passwordArrays.setShowPasswordSvg[indice](true);
+    else passwordArrays.setShowPasswordSvg[indice](false);
   }
 
 
-  const [emailInformation, setEmailInformation] = useState('')
-  const [passwordInformation, setPasswordInformation] = useState('')
-  const [passConfirmInformation, setPassConfirmInformation] = useState('')
-  // const [termsInformation, setTermsInformation] = useState('')
-  const [nameInformation, setNameInformation] = useState('')
+  const [emailInformation, setEmailInformation] = useState('');
+  const [passwordInformation, setPasswordInformation] = useState('');
+  const [passConfirmInformation, setPassConfirmInformation] = useState('');
+  const [nameInformation, setNameInformation] = useState('');
 
 
-  const [emailError, setEmailError] = useState('error')
-  const [passwordError, setPasswordError] = useState('error')
-  const [passCornfirmError, setPassConfirmError] = useState('error')
-  const [termsError, setTermsError] = useState('error')
-  const [nameError, setNameError] = useState('error')
-  const [emptyError, setEmptyError] = useState('error')
+  const [emailError, setEmailError] = useState('error');
+  const [passwordError, setPasswordError] = useState('error');
+  const [passCornfirmError, setPassConfirmError] = useState('error');
+  const [termsError, setTermsError] = useState('error');
+  const [nameError, setNameError] = useState('error');
+  const [emptyError, setEmptyError] = useState('error');
 
-  const [nameValid, setNameValid] = useState(false)
-  const [emailValid, setEmailValid] = useState(false)
-  const [passwordValid, setPasswordValid] = useState(false)
-  const [passwordConfirmValid, setPasswordConfirmValid] = useState(false)
-  const [termsValid, setTermsValid] = useState(false)
+  const [nameValid, setNameValid] = useState(false);
+  const [emailValid, setEmailValid] = useState(false);
+  const [passwordValid, setPasswordValid] = useState(false);
+  const [passwordConfirmValid, setPasswordConfirmValid] = useState(false);
+  const [termsValid, setTermsValid] = useState(false);
 
 
-  const nameValidation = (event) => {
-    setNameInformation(event.target.value)
+  const nameValidation = (e) => {
+    setNameInformation(e.target.value);
 
-    let name = event.target.value
+    let name = e.target.value;
 
     const checkEmail = (name) => {
       let emailPattern =  /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/;
@@ -62,19 +61,18 @@ function FormSignUp({showConfirmEmailPopup}) {
     }
 
     if(checkEmail(name) !== true) {
-      setNameError('error show')
-      setNameValid(false)
+      setNameError('error show');
+      setNameValid(false);
     } else {
-      setNameError('error')
-      setNameValid(true)
+      setNameError('error');
+      setNameValid(true);
     }
-    
   }
 
-  const emailValidation = (event) => {
-    setEmailInformation(event.target.value)
+  const emailValidation = (e) => {
+    setEmailInformation(e.target.value);
 
-    let email = event.target.value
+    let email = e.target.value;
 
     const checkEmail = (email) => {
       let emailPattern =  /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
@@ -82,19 +80,18 @@ function FormSignUp({showConfirmEmailPopup}) {
     }
 
     if(checkEmail(email) !== true) {
-      setEmailError('error show')
-      setEmailValid(false)
+      setEmailError('error show');
+      setEmailValid(false);
     } else {
-      setEmailError('error')
-      setEmailValid(true)
+      setEmailError('error');
+      setEmailValid(true);
     }
-    
   }
 
-  const passwordValidation = (event) => {
-    setPasswordInformation(event.target.value)
+  const passwordValidation = (e) => {
+    setPasswordInformation(e.target.value);
 
-    let password = event.target.value
+    let password = e.target.value;
 
     const checkPassword = (password) => {
       let PasswordPattern =  /^[0-9]+$/;
@@ -102,64 +99,55 @@ function FormSignUp({showConfirmEmailPopup}) {
     }
 
     if(checkPassword(password) !== true) {
-      setPasswordError('error show')
-      setPasswordValid(false)
+      setPasswordError('error show');
+      setPasswordValid(false);
     } else {
-      setPasswordError('error')
-      setPasswordValid(true)
+      setPasswordError('error');
+      setPasswordValid(true);
     }
   }
 
-  const passConfirmValidation = (event) => {
-    setPassConfirmInformation(event.target.value)
+  const passConfirmValidation = (e) => {
+    setPassConfirmInformation(e.target.value);
 
-    let passwordConfim = event.target.value 
+    let passwordConfim = e.target.value;
 
     if(passwordConfim !== passwordInformation) {
-      setPassConfirmError('error show')
-      setPasswordConfirmValid(false)
+      setPassConfirmError('error show');
+      setPasswordConfirmValid(false);
     } else {
-      setPassConfirmError('error')
-      setPasswordConfirmValid(true)
+      setPassConfirmError('error');
+      setPasswordConfirmValid(true);
     }
   }
 
-  
-
-  const termsValidation = (event) => { //colocar dentro da handle submit 
-    // setTermsInformation(event.target.checked)
-
-    let terms = event.target.checked
+  const termsValidation = (e) => {
+    let terms = e.target.checked;
 
     if(terms !== true) {
-      setTermsValid(false)
+      setTermsValid(false);
     } else {
-      setTermsValid(true)
+      setTermsValid(true);
     }
-
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if(termsValid !== true) {
-      setTermsError('error show')
+      setTermsError('error show');
     } else {
-      setTermsError('error')
+      setTermsError('error');
     }
 
-    console.log(nameValid, emailValid, passwordValid, passwordConfirmValid, termsValid)
-
-    if((nameInformation && emailInformation && passwordInformation && passConfirmInformation ) !== '')setEmptyError('error')
-    else setEmptyError('error show')
+    if((nameInformation && emailInformation && passwordInformation && passConfirmInformation ) !== '')setEmptyError('error');
+    else setEmptyError('error show');
 
     if((nameValid && emailValid && passwordValid && passwordConfirmValid && termsValid) !== false) {
       
-      // window.location.reload();
+      showConfirmEmailPopup();
 
-      showConfirmEmailPopup()
-
-      let userList = JSON.parse(localStorage.getItem('userList') || '[]')
+      let userList = JSON.parse(localStorage.getItem('userList') || '[]');
 
         userList.push(
             {
@@ -169,9 +157,8 @@ function FormSignUp({showConfirmEmailPopup}) {
             }
         )
 
-        localStorage.setItem('userList', JSON.stringify(userList))
+        localStorage.setItem('userList', JSON.stringify(userList));
     }
-
   }
   
   return (
@@ -216,7 +203,7 @@ function FormSignUp({showConfirmEmailPopup}) {
 
 }
 
-export default FormSignUp
+export default FormSignUp;
 
 FormSignUp.propTypes = {
   showConfirmEmailPopup: PropTypes.any,

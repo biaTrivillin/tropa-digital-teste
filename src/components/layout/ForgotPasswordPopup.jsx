@@ -1,22 +1,20 @@
-import '../../styles/popups.css'
-import Button from './Button'
+import '../../styles/popups.css';
+import Button from './Button';
 import { FaRegEnvelope } from "react-icons/fa";
-// import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 
 function ForgotPasswordPopup ({showForgotPassPopup}) {
 
-    
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
-        showForgotPassPopup()
+        showForgotPassPopup();
     }
     
 
     return (
-        <form onSubmit={(e) => handleSubmit(e)} className='popup_container show'>
+        <form onSubmit={(e) => handleSubmit(e)} className='popup_container'>
             <h1>Esqueci minha senha</h1>
             <p>Para redefinir sua senha, informe o e-mail cadastrado na sua conta e lhe enviaremos um link com as instruções.</p>
             <div className='input_text_container popup_input_text_container'>
@@ -32,7 +30,7 @@ function ForgotPasswordPopup ({showForgotPassPopup}) {
     )
 }
 
-export default ForgotPasswordPopup
+export default ForgotPasswordPopup;
 
 ForgotPasswordPopup.propTypes = {
     showForgotPassPopup: PropTypes.any,

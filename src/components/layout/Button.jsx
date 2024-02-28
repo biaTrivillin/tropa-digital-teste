@@ -1,4 +1,4 @@
-import '../../styles/Button.css'
+import '../../styles/Button.css';
 import PropTypes from 'prop-types';
 
 
@@ -16,4 +16,4 @@ Button.propTypes = {
     id: PropTypes.string.isRequired
 }
 
-export default Button
+export default Button;

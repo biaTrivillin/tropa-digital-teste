@@ -1,21 +1,21 @@
-import '../../styles/popups.css'
-import Button from './Button'
+import '../../styles/popups.css';
+import Button from './Button';
 import PropTypes from 'prop-types';
 
 
 function ConfirmEmailPopup ({showConfirmEmailPopup}) {
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
-        showConfirmEmailPopup()
+        showConfirmEmailPopup();
 
-        window.location.href = '/'
+        window.location.href = '/';
     }
     
 
     return (
-        <form onSubmit={(e) => handleSubmit(e)} className='popup_container show'>
+        <form onSubmit={(e) => handleSubmit(e)} className='popup_container'>
             <h1>Confirme seu E-mail</h1>
             <p>Para finalizar seu cadastro, enviamos um e-mail de confirmação para <a href="mailto:teste.tes@gmail.com">teste.tes@gmail.com</a>. Verifique sua caixa de entrada e clique no link “Confirmar E-mail”.</p> 
             <p>Caso não tenha recebido o e-mail clique em “Enviar e-mail novamente” que enviaremos um novo e-mail.</p>
@@ -27,7 +27,7 @@ function ConfirmEmailPopup ({showConfirmEmailPopup}) {
     )
 }
 
-export default ConfirmEmailPopup
+export default ConfirmEmailPopup;
 
 ConfirmEmailPopup.propTypes = {
     showConfirmEmailPopup: PropTypes.any,

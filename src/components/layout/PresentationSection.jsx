@@ -1,4 +1,4 @@
-import '../../styles/PresentationSection.css'
+import '../../styles/PresentationSection.css';
 
 function PresentationSection() {
 
@@ -11,4 +11,4 @@ function PresentationSection() {
   
 }
   
-export default PresentationSection
+export default PresentationSection;

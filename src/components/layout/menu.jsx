@@ -5,54 +5,43 @@ import { FaRegFileAlt } from "react-icons/fa";
 import { BsChatLeftDots } from "react-icons/bs";
 import { BsPersonCircle } from "react-icons/bs";
 import { IoExitOutline } from "react-icons/io5";
-// import { useState } from "react";
-
-import userImg from '../../assets/imgs/user-img.png'
-
-import '../../styles/Menu.css'
+import userImg from '../../assets/imgs/user-img.png';
+import '../../styles/Menu.css';
 import { useState } from "react";
 
 function Menu() {
-
-    // const [userName, setUserName] = useState('')
-    // const [userEmail, setUserEmail] = useState(''
     
-    let user = JSON.parse(localStorage.getItem('user'))
-    // setUserEmail(user.email)
+    let user = JSON.parse(localStorage.getItem('user'));
     
-    const [itemStyleOne, setItemStyleOne] = useState('item_unclicked')
-    const [itemStyleTwo, setItemStyleTwo] = useState('item_unclicked')
-    const [itemStyleThree, setItemStyleThree] = useState('item_unclicked')
-    const [itemStyleFour, setItemStyleFour] = useState('item_unclicked')
-    const [itemStyleFive, setItemStyleFive] = useState('item_unclicked')
+    const [itemStyleOne, setItemStyleOne] = useState('item_unclicked');
+    const [itemStyleTwo, setItemStyleTwo] = useState('item_unclicked');
+    const [itemStyleThree, setItemStyleThree] = useState('item_unclicked');
+    const [itemStyleFour, setItemStyleFour] = useState('item_unclicked');
+    const [itemStyleFive, setItemStyleFive] = useState('item_unclicked');
 
-    const [showMenuInformationStyle, setShowMenuInformationStyle] = useState('menu_list hide_information')
-    const [showMenuStyle, setShowMenuStyle] = useState('menu_container hide_menu')
+    const [showMenuInformationStyle, setShowMenuInformationStyle] = useState('menu_list hide_information');
+    const [showMenuStyle, setShowMenuStyle] = useState('menu_container hide_menu');
 
     const showMenu = () => {
-        if (showMenuInformationStyle !== 'menu_list show_information') setShowMenuInformationStyle('menu_list show_information')
-        else setShowMenuInformationStyle('menu_list hide_information')
+        if (showMenuInformationStyle !== 'menu_list show_information') setShowMenuInformationStyle('menu_list show_information');
+        else setShowMenuInformationStyle('menu_list hide_information');
 
-        if (showMenuStyle !== 'menu_container appear_menu') setShowMenuStyle('menu_container appear_menu')
-        else setShowMenuStyle('menu_container hide_menu')
+        if (showMenuStyle !== 'menu_container appear_menu') setShowMenuStyle('menu_container appear_menu');
+        else setShowMenuStyle('menu_container hide_menu');
     }
     
     const backToLogin = () => {
-        window.location.href = '/'
-        localStorage.removeItem('token')
-        localStorage.removeItem('user')
+        window.location.href = '/';
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
     }
 
-    
-
     const changeItemStyle = (indice) => {
+        let itemArray = [setItemStyleOne, setItemStyleTwo, setItemStyleThree, setItemStyleFour, setItemStyleFive];
 
-        let itemArray = [setItemStyleOne, setItemStyleTwo, setItemStyleThree, setItemStyleFour, setItemStyleFive]
+        itemArray.forEach((element) => element('item_unclicked'));
 
-        itemArray.forEach((element) => element('item_unclicked'))
-
-        itemArray[indice]('item_clicked')
-
+        itemArray[indice]('item_clicked');
     }
   
   
@@ -85,4 +74,4 @@ function Menu() {
     
   }
     
-  export default Menu
+  export default Menu;

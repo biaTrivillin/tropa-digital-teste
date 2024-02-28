@@ -1,4 +1,4 @@
-import '../../styles/forms.css'
+import '../../styles/forms.css';
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { FaRegEnvelope } from "react-icons/fa";
@@ -8,49 +8,31 @@ import { useState } from 'react';
 
 function FormLogin() {
 
-  const [showPasswordType, setShowPasswordType] = useState('password')
-
-  // const [showPasswordSvg, setShowPasswordSvg] = useState('input_svg')
-  const [showPasswordSvg, setShowPasswordSvg] = useState(false)
-  
-  // const [hidePasswordSvg, setHidePasswordSvg] = useState('input_svg show')
-
+  const [showPasswordType, setShowPasswordType] = useState('password');
+  const [showPasswordSvg, setShowPasswordSvg] = useState(false);
 
   const showPassword = () => {
-    if(showPasswordType !== 'text') setShowPasswordType('text')
-    else setShowPasswordType('password')
+    if(showPasswordType !== 'text') setShowPasswordType('text');
+    else setShowPasswordType('password');
 
-    
-
-    // if(showPasswordSvg !== 'input_svg show') setShowPasswordSvg('input_svg show')
-    // else setShowPasswordSvg('input_svg')
-
-    if(showPasswordSvg !== true) setShowPasswordSvg(true)
-    else setShowPasswordSvg(false)
-
-    // if(hidePasswordSvg !== 'input_svg') setHidePasswordSvg('input_svg')
-    // else setHidePasswordSvg('input_svg show')
+    if(showPasswordSvg !== true) setShowPasswordSvg(true);
+    else setShowPasswordSvg(false);
   }
 
-  const [emailLoginInformation, setEmailLoginInformation] = useState('')
-  // const [passwordLogin, setPasswordLogin] = useState('')
-  const [emailLoginValid, setEmailLoginValid] = useState('')
-  const [passwordLoginValid, setPasswordLoginValid] = useState('')
-  const [errorMessageStyle, setErrorMessageStyle] = useState('error')
-  const [errorMessage, setErrorMessage] = useState('Você deve preencher todos os campos para continuar')
+  const [emailLoginInformation, setEmailLoginInformation] = useState('');
 
-  let userList = JSON.parse(localStorage.getItem('userList'))
+  const [emailLoginValid, setEmailLoginValid] = useState('');
+  const [passwordLoginValid, setPasswordLoginValid] = useState('');
 
-  // let emailLogin
+  const [errorMessageStyle, setErrorMessageStyle] = useState('error');
+  const [errorMessage, setErrorMessage] = useState('Você deve preencher todos os campos para continuar');
+
+  let userList = JSON.parse(localStorage.getItem('userList'));
 
   const emailLoginValidation = (e) => {
-    setEmailLoginInformation(e.target.value)
+    setEmailLoginInformation(e.target.value);
 
-    let emailLogin = e.target.value
-
-    // console.log(emailLogin)
-
-    // userList = JSON.parse(localStorage.getItem('userList'));
+    let emailLogin = e.target.value;
 
     userList.forEach((item) => {
       if(emailLogin == item.email) {
@@ -63,22 +45,16 @@ function FormLogin() {
   }
 
   const passwordLoginValidation = (e) => {
-    // setEmailLoginInformation(e.target.value)
 
-    let passwordLogin = e.target.value
+    let passwordLogin = e.target.value;
 
     let token = Math.random().toString(10);
 
-    // let userValid = {
-    //   nameValid: 'name',
-    //   passwordValid: 'password',
-    // } 
+    let user = JSON.parse(localStorage.getItem('user'));
 
     userList.forEach((item) => {
       if((emailLoginInformation == item.email ) && (passwordLogin == item.password)) {
-        setPasswordLoginValid(true)
-
-        let user = JSON.parse(localStorage.getItem('user'))
+        setPasswordLoginValid(true);
 
         user = {
           email: item.email,
@@ -87,41 +63,34 @@ function FormLogin() {
 
         localStorage.setItem('token', token);
         localStorage.setItem('user', JSON.stringify(user));
-        // setErrorMessage('Login ou senha incorretos')
+
       } else {
-        setPasswordLoginValid(false)
-        // setErrorMessage('Você deve preencher todos os campos para continuar')
+        setPasswordLoginValid(false);
       }
-    })
+    });
 
     userList.forEach(() => {
       if((emailLoginInformation == '' ) || (passwordLogin == '')) {
-        setErrorMessage('Você deve preencher todos os campos para continuar')
+        setErrorMessage('Você deve preencher todos os campos para continuar');
       } else {
-        setErrorMessage('Email ou senha incorretos')
+        setErrorMessage('Email ou senha incorretos');
       }
-    })
-
-    // console.log(passwordLoginValid)
+    });
   
   }
 
   const handleSubmit = (e) => {
 
-    e.preventDefault()
+    e.preventDefault();
 
     if(emailLoginValid && passwordLoginValid){
-      console.log('logouuu!')
-      setErrorMessageStyle('error')
-      window.location.href = '/dashboard'
+      console.log('logouuu!');
+      setErrorMessageStyle('error');
+      window.location.href = '/dashboard';
     } else {
-      setErrorMessageStyle('error show')
+      setErrorMessageStyle('error show');
     }
-
-    console.log(emailLoginValid)
-    console.log(passwordLoginValid)
   }
-
 
     return (
       <form onSubmit={(e) => {handleSubmit(e)}} className='form_container'>
@@ -149,4 +118,4 @@ function FormLogin() {
   
 }
   
-export default FormLogin
+export default FormLogin;

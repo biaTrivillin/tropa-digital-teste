@@ -45,12 +45,7 @@
   position: absolute;
   bottom: 0.1rem;
   right: 0;
-  opacity: 0;
-}
-.input_svg {
-  color: var(--text-color);
-  font-size: 2rem;
-  opacity: 1;
+  cursor: pointer;
 }
 .input_radio_container {
   display: flex;
