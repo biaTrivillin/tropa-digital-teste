@@ -13,7 +13,10 @@
 }
 .btn_container {
     opacity: 0;
-    animation: appear-pop 0.5s ease-in 2s 1 forwards;
+    animation: appear-pop 0.5s ease-in 1.5s 1 forwards;
+}
+#forgot_pass_btn, #confirm_email_btn{
+    animation: appear-pop 0.5s ease-in 0.5s 1 forwards;
 }
 .submit_btn:hover {
     transform: scale(1.1);

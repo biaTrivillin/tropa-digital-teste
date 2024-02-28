@@ -86,3 +86,6 @@
 .hide {
   opacity: 0;
 }
+.mail_svg{
+  cursor: default;
+}

@@ -97,7 +97,7 @@ function FormLogin() {
         <fieldset className="inputs_container">
           <div className='input_text_container'>
             <label htmlFor='email_login'>E-mail</label>
-            <button><FaRegEnvelope className='input_svg' /></button>
+            <FaRegEnvelope className='input_svg mail_svg' />
             <input onBlur={(e) => {emailLoginValidation(e)}} className="input_text" id="email_login" type="text" placeholder="Insira seu e-mail"></input>
           </div>
           <div className='input_text_container'>
