@@ -3,8 +3,10 @@ import { FaRegEyeSlash } from "react-icons/fa";
 import Button from './Button';
 import { useState } from 'react';
 import '../../styles/forms.css'
+import PropTypes from 'prop-types';
 
-function FormSignUp() {
+
+function FormSignUp({showConfirmEmailPopup}) {
 
   const [showPasswordTypePass, setShowPasswordTypePass] = useState('password')
   const [showPasswordTypeConfirm, setShowPasswordTypeConfirm] = useState('password')
@@ -153,7 +155,9 @@ function FormSignUp() {
 
     if((nameValid && emailValid && passwordValid && passwordConfirmValid && termsValid) !== false) {
       
-      window.location.href = '/'
+      // window.location.reload();
+
+      showConfirmEmailPopup()
 
       let userList = JSON.parse(localStorage.getItem('userList') || '[]')
 
@@ -213,3 +217,7 @@ function FormSignUp() {
 }
 
 export default FormSignUp
+
+FormSignUp.propTypes = {
+  showConfirmEmailPopup: PropTypes.any,
+};

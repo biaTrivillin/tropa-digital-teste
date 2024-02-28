@@ -10,9 +10,9 @@ import { GoBell } from "react-icons/go";
 
 function Dashboard() {
 
-  // if (localStorage.getItem('token') == null) {
-  //   window.location.href = '/'
-  // }
+  if (localStorage.getItem('token') == null) {
+    window.location.href = '/'
+  }
 
 
     return (

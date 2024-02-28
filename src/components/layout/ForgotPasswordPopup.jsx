@@ -33,6 +33,7 @@ function ForgotPasswordPopup ({showForgotPassPopup}) {
 }
 
 export default ForgotPasswordPopup
+
 ForgotPasswordPopup.propTypes = {
     showForgotPassPopup: PropTypes.any,
 };
