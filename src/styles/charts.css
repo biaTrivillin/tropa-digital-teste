@@ -1,0 +1,39 @@
+@import 'global';
+
+.chart_container{
+    background-color: var(--background-color);
+    padding: 1.8rem;
+}
+
+.chart_container h3 {
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+    font-weight: 500;
+    font-family: var(--dashboard-font);
+}
+.chart_container h2 {
+    font-family: var(--dashboard-font);
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+.chart_container h4 {
+    font-family: var(--dashboard-font);
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+.information_icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+    cursor: pointer;
+}
+.information_chart_container {
+    position: relative;
+}
+#two_bar {
+    grid-area: 2/1/3/4;
+}

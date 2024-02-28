@@ -7,19 +7,6 @@ import PropTypes from 'prop-types';
 
 function ForgotPasswordPopup ({showForgotPassPopup}) {
 
-    // console.log(showPopup)
-
-    // const [popupStyle, setPopupStyle] = useState('popup_container show')
-
-    // let miap = showPopup;
-
-    // const blabla = () => {
-    //     miap = false;
-
-    //     if(miap == true) setPopupStyle('popup_container show')
-    //     else setPopupStyle('popup_container hide')
-    // }
-
     
     const handleSubmit = (e) => {
         e.preventDefault()
