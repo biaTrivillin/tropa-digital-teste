@@ -8,8 +8,9 @@ import { IoExitOutline } from "react-icons/io5";
 import userImg from '../../assets/imgs/user-img.png';
 import '../../styles/Menu.css';
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
-function Menu() {
+function Menu({changePadding}) {
     
     let user = JSON.parse(localStorage.getItem('user'));
     
@@ -34,6 +35,8 @@ function Menu() {
 
         if (showMenuStyle !== 'menu_container appear_menu') setShowMenuStyle('menu_container appear_menu');
         else setShowMenuStyle('menu_container hide_menu');
+
+        changePadding()
     }
     
     const backToLogin = () => {
@@ -83,3 +86,7 @@ function Menu() {
   }
     
   export default Menu;
+
+  Menu.propTypes = {
+    changePadding: PropTypes.any,
+};

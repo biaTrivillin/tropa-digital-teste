@@ -66,3 +66,11 @@
     gap: 4rem;
     min-width: 100%;
 }
+.change_padding {
+    padding-left: 35rem;
+    transition: 1s;
+}
+.change_padding_hide {
+    padding-left: 14rem;
+    transition: 1s;
+}
