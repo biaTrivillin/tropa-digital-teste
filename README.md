@@ -20,7 +20,7 @@
 
 ## Features e detalhes 
 
-### Animações
+## Animações
 Animações e eventos de hover e click foram incluidos para possibilitar a criação de uma interface mais atrativa e intuitiva.<br>
 
 <div align="center">
@@ -32,7 +32,7 @@ Animações e eventos de hover e click foram incluidos para possibilitar a cria�
 
 ##
 
-### API's
+## API's
 
 **REACT ROUTER-DOM**<br>
 Utilizada para criar e manipuar as rotas da aplicação.<br><br>
@@ -42,7 +42,7 @@ Utilizada para incluir ícones ao projeto com mais facilidade.
 
 ##
 
-### Cadastro Funcional
+## Cadastro Funcional
 
 **VIZUALIZAÇÃO DE SENHA**<br>
 A aplicação conta com a opção de visualização de senha, que garante muito mais praticidade aos usuários.<br>
@@ -89,7 +89,7 @@ Com todos os campos preenchidos e válidos, um objeto com as informações do us
 
 ##
 
-### Login Funcional 
+## Login Funcional 
 **VALIDAÇÃO E LOCALSTORAGE**<br>
 No momento do Login também acontece a validação dos dados fornecidos. <br>Nesse caso, são utizadas as informações armazenadas no localStorage. Caso as informações coincidam, o login é realizado.<br> Caso contrário mensagens de erro serão exibidas para revelar quais dados estão incorretos.<br>
 <div align="center">
@@ -106,7 +106,7 @@ Entretanto, se o login foi efetivado, o usuário tera total acesso à página. A
 
 ##
 
-### Popups
+## Popups
 **ESQUECI MINHA SENHA**<br>
 O popup "Esqueci Minha Senha" aparecerá caso o usuário clique em "Esqueceu a senha?" na página de login.<br>
 Ele conta com um campo para email que também possui validação por regex.<br>
@@ -123,7 +123,7 @@ Ele revela para qual endero o email de confimação será enviado.<br>
 
 ##
 
-### Dashboard
+## Dashboard
 **RECUPERAÇÃO DOS DADOS**<br>
 Depois de realizar o cadastro e login, o usuário terá acesso à rota "/dasboard". 
 Nela pode-se verificar que as informações do localStorage são novamente recuperadas, dessa vez, para criar um pequeno perfil do usuário.<br>
