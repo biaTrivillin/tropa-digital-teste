@@ -102,12 +102,11 @@ function FormLogin() {
           </div>
           <div className='input_text_container'>
             <label htmlFor='password_login'>Senha</label>
-            {/* <button onClick={showPassword} id='show_pass_btn'><FaRegEye className={showPasswordSvg} /><FaRegEyeSlash className={hidePasswordSvg} /></button> */}
             <button type='button' onClick={showPassword} id='show_pass_btn'>{showPasswordSvg ? <FaRegEye className='input_svg' /> : <FaRegEyeSlash className="input_svg" />}</button>
             <input onBlur={(e) => {passwordLoginValidation(e)}} className="input_text" id="password_login" type={showPasswordType} placeholder="Insira sua senha utilizando apenas números"></input>
           </div>
           <div className='input_radio_container'>
-            <input id="radio_login" type="radio"></input>
+            <input id="radio_login" type="checkbox"></input>
             <label htmlFor="radio_login">Lembrar e-mail e senha</label>
           </div>
           <span className={errorMessageStyle}>{errorMessage}</span>

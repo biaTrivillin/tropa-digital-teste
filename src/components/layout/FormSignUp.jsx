@@ -2,7 +2,7 @@ import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import Button from './Button';
 import { useState } from 'react';
-import '../../styles/forms.css'
+import '../../styles/forms.css';
 import PropTypes from 'prop-types';
 import { FaCheck } from "react-icons/fa6";
 
@@ -38,6 +38,7 @@ function FormSignUp({showConfirmEmailPopup}) {
 
 
   const [emailError, setEmailError] = useState('error');
+  const [emailErrorMessage, setEmailErrorMessage] = useState('Esse e-mail é inválido');
   const [passwordError, setPasswordError] = useState('error');
   const [passCornfirmError, setPassConfirmError] = useState('error');
   const [termsError, setTermsError] = useState('error');
@@ -56,12 +57,12 @@ function FormSignUp({showConfirmEmailPopup}) {
 
     let name = e.target.value;
 
-    const checkEmail = (name) => {
-      let emailPattern =  /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/;
-      return emailPattern.test(name); 
+    const checkName = (name) => {
+      let namePattern =  /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/;
+      return namePattern.test(name); 
     }
 
-    if(checkEmail(name) !== true) {
+    if(checkName(name) !== true) {
       setNameError('error show');
       setNameValid(false);
     } else {
@@ -75,12 +76,27 @@ function FormSignUp({showConfirmEmailPopup}) {
 
     let email = e.target.value;
 
+    let userList = JSON.parse(localStorage.getItem('userList'))
+
+    let isNotRegistred = false
+
     const checkEmail = (email) => {
       let emailPattern =  /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
       return emailPattern.test(email); 
     }
 
-    if(checkEmail(email) !== true) {
+    userList.map(emailData => {
+      if (emailData.email === email) {
+        setEmailErrorMessage('Esse email já foi cadastrado')
+        isNotRegistred = false
+      }
+      else{
+        isNotRegistred = true
+        setEmailErrorMessage('Esse e-mail é inválido')
+      } 
+    });
+
+    if((checkEmail(email) !== true) || (isNotRegistred !== true)) {
       setEmailError('error show');
       setEmailValid(false);
     } else {
@@ -176,7 +192,7 @@ function FormSignUp({showConfirmEmailPopup}) {
           {emailValid && <FaCheck className='input_svg check_svg' />}
           <input value={emailInformation} onChange={emailValidation} className="input_text" id="email_signup" type="text" placeholder="Insira seu e-mail"></input>
         </div>
-        <span className={emailError}>Esse e-mail é inválido</span>
+        <span className={emailError}>{emailErrorMessage}</span>
         <div className='input_text_container'>
           <label htmlFor='password_signup'>Senha</label>
           <button type="button" onClick={() => {showPassword(0)}}>{showPasswordSvg ? <FaRegEye className='input_svg' /> : <FaRegEyeSlash className="input_svg" />}</button>
