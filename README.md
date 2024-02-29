@@ -28,6 +28,11 @@
 ### Animações
 Animações e eventos de hover e click foram incluidos para possibilitar a criação de uma interface mais atrativa e intuitiva. 
 
+<div style="display: inline_block">
+  <img align="center" src="src/assets/imgs/animacao-1.gif" width="500px">
+  <img align="center" src="src/assets/imgs/animacao-2.gif" width="500px">
+</div> <br>
+
 ##
 
 ### API's
