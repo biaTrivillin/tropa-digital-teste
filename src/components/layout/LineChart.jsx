@@ -1,6 +1,6 @@
 import { IoIosInformationCircle } from "react-icons/io";
-import '../../styles/charts.css'
-import lineChartImg from '../../assets/imgs/line-chart.png'
+import '../../styles/charts.css';
+import lineChartImg from '../../assets/imgs/line-chart.png';
 
 
 function LineChart () {
@@ -21,4 +21,4 @@ function LineChart () {
 }
 
 
-export default LineChart
+export default LineChart;

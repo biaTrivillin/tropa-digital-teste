@@ -41,7 +41,6 @@ function FormLogin() {
         setEmailLoginValid(false);
       }
     })
-    
   }
 
   const passwordLoginValidation = (e) => {
@@ -76,7 +75,6 @@ function FormLogin() {
         setErrorMessage('Email ou senha incorretos');
       }
     });
-  
   }
 
   const handleSubmit = (e) => {

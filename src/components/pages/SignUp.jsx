@@ -3,26 +3,21 @@ import FormSignUp from "../layout/FormSignUp";
 import { FaAngleLeft } from "react-icons/fa";
 import ConfirmEmailPopup from "../layout/ConfirmEmailPopup";
 import { useState } from "react";
-
-import '../../styles/Login-SignUp.css'
+import '../../styles/Login-SignUp.css';
 
 
 function SignUp() {
 
-  const [showPopup, setShowPopup] = useState(false)
-
+  const [showPopup, setShowPopup] = useState(false);
 
   const showConfirmEmailPopup = () => {
-    if(showPopup !== true) setShowPopup(true)
-    else setShowPopup(false)
-
-    console.log(showPopup)
+    if(showPopup !== true) setShowPopup(true);
+    else setShowPopup(false);
   
   }
 
-
   const backToLogin = () => {
-    window.location.href = '/'
+    window.location.href = '/';
   }
 
     return (
@@ -39,4 +34,4 @@ function SignUp() {
   
 }
   
-export default SignUp
+export default SignUp;

@@ -1,6 +1,6 @@
 import { IoIosInformationCircle } from "react-icons/io";
-import '../../styles/charts.css'
-import pieChartImg from '../../assets/imgs/pie-chart.png'
+import '../../styles/charts.css';
+import pieChartImg from '../../assets/imgs/pie-chart.png';
 
 function PieChart () {
     
@@ -19,4 +19,4 @@ function PieChart () {
 }
 
 
-export default PieChart
+export default PieChart;

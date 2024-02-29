@@ -51,6 +51,7 @@ function FormSignUp({showConfirmEmailPopup}) {
   const [passwordConfirmValid, setPasswordConfirmValid] = useState(false);
   const [termsValid, setTermsValid] = useState(false);
 
+  let userList = JSON.parse(localStorage.getItem('userList') || '[]');
 
   const nameValidation = (e) => {
     setNameInformation(e.target.value);
@@ -62,7 +63,7 @@ function FormSignUp({showConfirmEmailPopup}) {
       return namePattern.test(name); 
     }
 
-    if(checkName(name) !== true) {
+    if(!checkName(name)) {
       setNameError('error show');
       setNameValid(false);
     } else {
@@ -76,27 +77,21 @@ function FormSignUp({showConfirmEmailPopup}) {
 
     let email = e.target.value;
 
-    let userList = JSON.parse(localStorage.getItem('userList'))
-
-    let isNotRegistred = false
-
     const checkEmail = (email) => {
       let emailPattern =  /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
       return emailPattern.test(email); 
     }
 
-    userList.map(emailData => {
-      if (emailData.email === email) {
-        setEmailErrorMessage('Esse email já foi cadastrado')
-        isNotRegistred = false
-      }
-      else{
-        isNotRegistred = true
-        setEmailErrorMessage('Esse e-mail é inválido')
-      } 
-    });
+    let isRegistred = userList.some((item) => item.email === email);
 
-    if((checkEmail(email) !== true) || (isNotRegistred !== true)) {
+    if (isRegistred) {
+      setEmailErrorMessage('Esse email já foi cadastrado');
+    }
+    else{
+      setEmailErrorMessage('Esse e-mail é inválido');
+    } 
+
+    if((!checkEmail(email)) || (isRegistred)) {
       setEmailError('error show');
       setEmailValid(false);
     } else {
@@ -115,7 +110,7 @@ function FormSignUp({showConfirmEmailPopup}) {
       return PasswordPattern.test(password); 
     }
 
-    if(checkPassword(password) !== true) {
+    if(!checkPassword(password)) {
       setPasswordError('error show');
       setPasswordValid(false);
     } else {
@@ -164,15 +159,13 @@ function FormSignUp({showConfirmEmailPopup}) {
       
       showConfirmEmailPopup();
 
-      let userList = JSON.parse(localStorage.getItem('userList') || '[]');
-
         userList.push(
             {
                 name: nameInformation,
                 email: emailInformation,
                 password: passwordInformation,
             }
-        )
+        );
 
         localStorage.setItem('userList', JSON.stringify(userList));
     }

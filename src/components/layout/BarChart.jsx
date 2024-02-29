@@ -1,6 +1,6 @@
 import { IoIosInformationCircle } from "react-icons/io";
-import '../../styles/charts.css'
-import barChartImg from '../../assets/imgs/bar-chart.png'
+import '../../styles/charts.css';
+import barChartImg from '../../assets/imgs/bar-chart.png';
 
 function BarChart () {
     
@@ -19,4 +19,4 @@ function BarChart () {
 }
 
 
-export default BarChart
+export default BarChart;

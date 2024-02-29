@@ -11,7 +11,6 @@ function ForgotPasswordPopup ({showForgotPassPopup}) {
 
         showForgotPassPopup();
     }
-    
 
     return (
         <form onSubmit={(e) => handleSubmit(e)} className='popup_container'>

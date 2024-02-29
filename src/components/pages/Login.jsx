@@ -1,17 +1,17 @@
 import FormLogin from "../layout/FormLogin";
 import PresentationSection from "../layout/PresentationSection";
 import ForgotPasswordPopup from "../layout/ForgotPasswordPopup";
-import '../../styles/Login-SignUp.css'
+import '../../styles/Login-SignUp.css';
 import { useState } from "react";
 
 function Login() {
 
-  const [showPopup, setShowPopup] = useState(false)
+  const [showPopup, setShowPopup] = useState(false);
 
 
   const showForgotPassPopup = () => {
-    if(showPopup !== true) setShowPopup(true)
-    else setShowPopup(false)
+    if(showPopup !== true) setShowPopup(true);
+    else setShowPopup(false);
 
   }
 
@@ -32,4 +32,4 @@ function Login() {
   
 }
   
-export default Login
+export default Login;

@@ -30,14 +30,13 @@
 .popup_container svg {
   cursor: default;
 }
-.popup_container p, .popup_container a {
+.popup_container p, .popup_container strong {
   font-size: 2.2rem;
   text-align: center;
   font-weight: 400;
 }
-.popup_container a {
+.popup_container strong {
   color: var(--secondary-color);
-  text-decoration: none;
 }
 .popup_container button {
   background-color: transparent;

@@ -1,27 +1,26 @@
-import Menu from "../layout/menu"
-import '../../styles/Dashboard.css'
-import LineChart from "../layout/LineChart"
-import PieChart from "../layout/PieChart"
-import BarChart from "../layout/BarChart"
-import TwoBarsChart from "../layout/TwoBarsChart"
+import Menu from "../layout/menu";
+import '../../styles/Dashboard.css';
+import LineChart from "../layout/LineChart";
+import PieChart from "../layout/PieChart";
+import BarChart from "../layout/BarChart";
+import TwoBarsChart from "../layout/TwoBarsChart";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { GoBell } from "react-icons/go";
-import { useState } from "react"
+import { useState } from "react";
 
 
 function Dashboard() {
 
-  const [menuIsShown, setMenuIsShown] = useState('dashboard_container')
+  const [menuIsShown, setMenuIsShown] = useState('dashboard_container');
 
   const changePadding = () => {
-    if(menuIsShown !== 'dashboard_container change_padding') setMenuIsShown('dashboard_container change_padding')
-    else setMenuIsShown('dashboard_container change_padding_hide')
+    if(menuIsShown !== 'dashboard_container change_padding') setMenuIsShown('dashboard_container change_padding');
+    else setMenuIsShown('dashboard_container change_padding_hide');
   }
 
   if (localStorage.getItem('token') == null) {
-    window.location.href = '/'
+    window.location.href = '/';
   }
-
 
     return (
       <>
@@ -45,4 +44,4 @@ function Dashboard() {
   
 }
   
-export default Dashboard
+export default Dashboard;
