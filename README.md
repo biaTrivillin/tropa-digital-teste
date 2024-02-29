@@ -91,7 +91,7 @@ Com todos os campos preenchidos e válidos, um objeto com as informações do us
 
 ## Login Funcional 
 **VALIDAÇÃO E LOCALSTORAGE**<br>
-No momento do Login também acontece a validação dos dados fornecidos. <br>Nesse caso, são utizadas as informações armazenadas no localStorage. Caso as informações coincidam, o login é realizado.<br> Caso contrário mensagens de erro serão exibidas para revelar quais dados estão incorretos.<br>
+No momento do login também acontece a validação dos dados fornecidos. <br>Nesse caso, são utizadas as informações armazenadas no localStorage. Caso as informações coincidam, o login é realizado.<br> Caso contrário mensagens de erro serão exibidas para revelar quais dados estão incorretos.<br>
 <div align="center">
   <img align="center" src="src/assets/imgs/validacao-login.gif" width="700px">
 </div> <br><br>
