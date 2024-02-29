@@ -76,6 +76,10 @@ function FormLogin() {
       setPasswordLoginValid(false)
     }
 
+    if(userList.length == 0) {
+      setErrorMessage('Email ou senha incorretos')
+    }
+
     userList.forEach(() => {
       if((emailLoginInformation == '' ) || (passwordLogin == '')) {
         setErrorMessage('Você deve preencher todos os campos para continuar');
