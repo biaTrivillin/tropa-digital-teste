@@ -29,6 +29,12 @@ Animações e eventos de hover e click foram incluidos para possibilitar a cria�
 <div align="center">
   <img align="center" src="src/assets/imgs/animacao-2.gif" width="700px">
 </div> <br>
+<div align="center">
+  <img align="center" src="src/assets/imgs/click.gif" width="700px">
+</div> <br>
+<div align="center">
+  <img align="center" src="src/assets/imgs/hover.gif" width="700px">
+</div> <br>
 
 ##
 
