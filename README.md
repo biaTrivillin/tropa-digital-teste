@@ -2,11 +2,6 @@
 
 >O projeto em questão envolveu o desenvolvimento de uma página de login, cadastro e dashboard utilizando ReactJS para a empresa Tropa Digital, especializada em desenvolvimento de software.<br>
 
-## Preview
-<div align="center">
-  <img align="center" src="src/imgs/preview-oclock.gif" width="700px">
-</div> <br>
-
 ## Tecnologias utilizadas
 <div style="display: inline_block"><br>
   <img align="center" alt="bia-js" height="40" width="50" src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg">
@@ -26,11 +21,13 @@
 ## Features e detalhes 
 
 ### Animações
-Animações e eventos de hover e click foram incluidos para possibilitar a criação de uma interface mais atrativa e intuitiva. 
+Animações e eventos de hover e click foram incluidos para possibilitar a criação de uma interface mais atrativa e intuitiva.<br>
 
-<div style="display: inline_block">
-  <img align="center" src="src/assets/imgs/animacao-1.gif" width="500px">
-  <img align="center" src="src/assets/imgs/animacao-2.gif" width="500px">
+<div align="center">
+  <img align="center" src="src/assets/imgs/animacao-1.gif" width="700px">
+</div> <br>
+<div align="center">
+  <img align="center" src="src/assets/imgs/animacao-2.gif" width="700px">
 </div> <br>
 
 ##
@@ -48,7 +45,10 @@ Utilizada para incluir ícones ao projeto com mais facilidade.
 ### Cadastro Funcional
 
 **VIZUALIZAÇÃO DE SENHA**<br>
-A aplicação conta com a opção de visualização de senha, que garante muito mais praticidade aos usuários.<br><br>
+A aplicação conta com a opção de visualização de senha, que garante muito mais praticidade aos usuários.<br>
+<div align="center">
+  <img align="center" src="src/assets/imgs/senha.gif" width="700px">
+</div> <br><br>
 
 **VALIDAÇÃO**<br>
 O formulário trabalha com três tipos de validação <br>
@@ -76,38 +76,60 @@ O input "confirme sua senha" apenas é validado caso seu valor correspoda ao val
 Já o input do email, por exemplo, passa por uma segunda validação. Com uma consulta aos dados, verifica-se se o email já está cadastrado no sistema. <br><br>
 
 **MENSAGENS DE ERRO** <br>
-Caso alguma informação estiver inconsistente, uma mensagem de erro será exibida para indicar o motivo pelo qual o registro não pôde ser concluído. Isso assegura uma interface muito mais acessível e intuitiva.<br><br>
+Caso alguma informação estiver inconsistente, uma mensagem de erro será exibida para indicar o motivo pelo qual o registro não pôde ser concluído. Isso assegura uma interface muito mais acessível e intuitiva.<br>
+<div align="center">
+  <img align="center" src="src/assets/imgs/validacao-cadastro.gif" width="700px">
+</div> <br><br>
 
 **LOCALSTORAGE**<br>
-Com todos os campos preenchidos e válidos, um objeto com as informações do usuário é enviado para o LocalStorage, que mais tarde será utilizado para simular o login.
+Com todos os campos preenchidos e válidos, um objeto com as informações do usuário é enviado para o LocalStorage, que mais tarde será utilizado para simular o login.<br>
+<div align="center">
+  <img align="center" src="src/assets/imgs/localstorage.gif" width="700px">
+</div> <br><br>
 
 ##
 
 ### Login Funcional 
 **VALIDAÇÃO E LOCALSTORAGE**<br>
-No momento do Login também acontece a validação dos dados fornecidos. <br>Nesse caso, são utizadas as informações armazenadas no localStorage. Caso as informações coincidam, o login é realizado.<br> Caso contrário mensagens de erro serão exibidas para revelar quais dados estão incorretos.<br><br>
+No momento do Login também acontece a validação dos dados fornecidos. <br>Nesse caso, são utizadas as informações armazenadas no localStorage. Caso as informações coincidam, o login é realizado.<br> Caso contrário mensagens de erro serão exibidas para revelar quais dados estão incorretos.<br>
+<div align="center">
+  <img align="center" src="src/assets/imgs/validacao-login.gif" width="700px">
+</div> <br><br>
+
 **TOKEN**<br>
 Com o login bem sucedido, um token aleatório é gerado e armazenado no localStorage. Esse token será necessário para o acesso da rota '/dashboard'<br>
 Caso o usuário tente alterar a rota da aplicação para '/dashboard' sem antes realizar login, ele será retirecionado para a página inicial. 
-Entretanto, se o login foi efetivado, o usuário tera total acesso à página. Acesso que permanecerá até que decida encerrar sessão, quando o token será apagado. Dessa forma, para voltar a acessar a página, o usuário deverá fazer novo ligin. 
+Entretanto, se o login foi efetivado, o usuário tera total acesso à página. Acesso que permanecerá até que decida encerrar sessão, quando o token será apagado. Dessa forma, para voltar a acessar a página, o usuário deverá fazer novo ligin.<br>
+<div align="center">
+  <img align="center" src="src/assets/imgs/token.gif" width="700px">
+</div> <br><br>
 
 ##
 
 ### Popups
 **ESQUECI MINHA SENHA**<br>
 O popup "Esqueci Minha Senha" aparecerá caso o usuário clique em "Esqueceu a senha?" na página de login.<br>
-Ele conta com um campo para email que também possui validação por regex.<br><br>
+Ele conta com um campo para email que também possui validação por regex.<br>
+<div align="center">
+  <img align="center" src="src/assets/imgs/popup-2.gif" width="700px">
+</div> <br><br>
 
 **CONFIRMAR EMAIL**<br>
 O popup "Confirmar Email" apacerá após um login bem sucedido.<br>
-Ele revela para qual endero o email de confimação será enviado.
+Ele revela para qual endero o email de confimação será enviado.<br>
+<div align="center">
+  <img align="center" src="src/assets/imgs/popup-1.gif" width="700px">
+</div> <br><br>
 
 ##
 
 ### Dashboard
 **RECUPERAÇÃO DOS DADOS**<br>
 Depois de realizar o cadastro e login, o usuário terá acesso à rota "/dasboard". 
-Nela pode-se verificar que as informações do localStorage são novamente recuperadas, dessa vez, para criar um pequeno perfil do usuário.
+Nela pode-se verificar que as informações do localStorage são novamente recuperadas, dessa vez, para criar um pequeno perfil do usuário.<br>
+<div align="center">
+  <img align="center" src="src/assets/imgs/dashboard.gif" width="700px">
+</div> <br><br>
 
 ## Próximos Passos 
 - tonar página MobileFriendely
