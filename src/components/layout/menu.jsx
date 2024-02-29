@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 
 function Menu({changePadding}) {
     
-    let user = JSON.parse(localStorage.getItem('user'));
+    let userValid = JSON.parse(localStorage.getItem('userValid'));
     
     const [itemStyleOne, setItemStyleOne] = useState('item_unclicked');
     const [itemStyleTwo, setItemStyleTwo] = useState('item_unclicked');
@@ -42,7 +42,7 @@ function Menu({changePadding}) {
     const backToLogin = () => {
         window.location.href = '/';
         localStorage.removeItem('token');
-        localStorage.removeItem('user');
+        localStorage.removeItem('userValid');
     }
 
     const changeItemStyle = (indice) => {
@@ -61,8 +61,8 @@ function Menu({changePadding}) {
             <div>
                 <div className="user_information">
                     <button onClick={showMenu} className="menu_btn"><FaBars /></button>
-                    <h1 className={showUserName}>{user.name}</h1>
-                    <h2 className={showUserName}>{user.email}</h2>
+                    <h1 className={showUserName}>{userValid.nameValid}</h1>
+                    <h2 className={showUserName}>{userValid.emailValid}</h2>
                     <img src={userImg} alt="" />
                 </div>
                 <div className="menu_information">

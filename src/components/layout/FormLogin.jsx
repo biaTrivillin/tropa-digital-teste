@@ -27,46 +27,54 @@ function FormLogin() {
   const [errorMessageStyle, setErrorMessageStyle] = useState('error');
   const [errorMessage, setErrorMessage] = useState('Você deve preencher todos os campos para continuar');
 
-  let userList = JSON.parse(localStorage.getItem('userList'));
+  let userList = JSON.parse(localStorage.getItem('userList') || '[]');
 
   const emailLoginValidation = (e) => {
     setEmailLoginInformation(e.target.value);
 
     let emailLogin = e.target.value;
 
-    userList.forEach((item) => {
-      if(emailLogin == item.email) {
-        setEmailLoginValid(true);
-      } else {
-        setEmailLoginValid(false);
-      }
-    })
+    let isRegistred = userList.some((item) => item.email === emailLogin);
+
+    if (isRegistred) {
+      setEmailLoginValid(true);
+    }
+    else{
+      setEmailLoginValid(false);
+    } 
   }
 
   const passwordLoginValidation = (e) => {
 
     let passwordLogin = e.target.value;
 
+    let userValid = {
+      nameValid: 'name',
+      emailValid: 'email',
+      passwordValid: 'password',
+    }
+
     let token = Math.random().toString(10);
 
-    let user = JSON.parse(localStorage.getItem('user'));
-
     userList.forEach((item) => {
-      if((emailLoginInformation == item.email ) && (passwordLogin == item.password)) {
-        setPasswordLoginValid(true);
+        if((emailLoginInformation == item.email) && (passwordLogin == item.password)) {
+            
+            userValid = {
+                nameValid: item.name,
+                emailValid: item.email,
+                passwordValid: item.password,  
+            }
 
-        user = {
-          email: item.email,
-          name: item.name
         }
-
-        localStorage.setItem('token', token);
-        localStorage.setItem('user', JSON.stringify(user));
-
-      } else {
-        setPasswordLoginValid(false);
-      }
     });
+
+    if(passwordLogin == userValid.passwordValid) {
+      setPasswordLoginValid(true)
+      localStorage.setItem('token', token);
+      localStorage.setItem('userValid', JSON.stringify(userValid));
+    } else {
+      setPasswordLoginValid(false)
+    }
 
     userList.forEach(() => {
       if((emailLoginInformation == '' ) || (passwordLogin == '')) {
@@ -81,8 +89,7 @@ function FormLogin() {
 
     e.preventDefault();
 
-    if(emailLoginValid && passwordLoginValid){
-      console.log('logouuu!');
+    if( emailLoginValid && passwordLoginValid){
       setErrorMessageStyle('error');
       window.location.href = '/dashboard';
     } else {
