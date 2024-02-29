@@ -33,7 +33,6 @@
     margin-top: 4rem;
 }
 
-
 @media (max-height: 900px) {
     #confirm_email_btn, #forgot_pass_btn{
         font-size: 2rem;

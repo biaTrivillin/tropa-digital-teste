@@ -52,7 +52,7 @@ function Menu({changePadding}) {
 
         itemArray[indice]('item_clicked');
 
-        setSelectStyle('')
+        setSelectStyle('');
     }
   
   

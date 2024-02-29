@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
     gap: 2.7rem;
-    padding: 6rem 6rem 6rem 14rem;
+    padding: 6rem 6rem 8rem 14rem;
     animation: appear 1s ease-in-out 1 forwards;
 }
 .dashboard_title {
