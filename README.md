@@ -41,7 +41,7 @@ Animações e eventos de hover e click foram incluidos para possibilitar a cria�
 ## API's
 
 **REACT ROUTER-DOM**<br>
-Utilizada para criar e manipuar as rotas da aplicação.<br><br>
+Utilizada para criar e manipular as rotas da aplicação.<br><br>
 
 **REACT ICONS**<br>
 Utilizada para incluir ícones ao projeto com mais facilidade. 
@@ -59,7 +59,7 @@ A aplicação conta com a opção de visualização de senha, que garante muito 
 **VALIDAÇÃO**<br>
 O formulário trabalha com três tipos de validação <br>
 - **regex**<br>
-Espressões regulares foram aplicadas a validação para garantir a integridade das informações fornecidas para o sistema. Confira a seguir as expressões regulares utilizadas no projeto.
+Espressões regulares foram aplicadas à validação para garantir a integridade das informações fornecidas para o sistema. Confira a seguir as expressões regulares utilizadas no projeto.
 ```JavaScript
 //senha -------------------------------------------------------------
 
@@ -82,7 +82,7 @@ O input "confirme sua senha" apenas é validado caso seu valor correspoda ao val
 Já o input do email, por exemplo, passa por uma segunda validação. Com uma consulta aos dados, verifica-se se o email já está cadastrado no sistema. <br><br>
 
 **MENSAGENS DE ERRO** <br>
-Caso alguma informação estiver inconsistente, uma mensagem de erro será exibida para indicar o motivo pelo qual o registro não pôde ser concluído. Isso assegura uma interface muito mais acessível e intuitiva.<br>
+Caso alguma informação estiver inconsistente, uma mensagem de erro será exibida para indicar o motivo pelo qual o registro não pode ser concluído. Isso assegura uma interface muito mais acessível e intuitiva.<br>
 <div align="center">
   <img align="center" src="src/assets/imgs/validacao-cadastro.gif" width="700px">
 </div> <br><br>
@@ -97,15 +97,15 @@ Com todos os campos preenchidos e válidos, um objeto com as informações do us
 
 ## Login Funcional 
 **VALIDAÇÃO E LOCALSTORAGE**<br>
-No momento do login também acontece a validação dos dados fornecidos. <br>Nesse caso, são utizadas as informações armazenadas no localStorage. Caso as informações coincidam, o login é realizado.<br> Caso contrário mensagens de erro serão exibidas para revelar quais dados estão incorretos.<br>
+No momento do login também acontece a validação dos dados fornecidos. <br>Nesse caso, são utizadas as informações armazenadas no LocalStorage. Caso as informações coincidam, o login é realizado.<br> Caso contrário, a mensagem de erro será exibida.<br>
 <div align="center">
   <img align="center" src="src/assets/imgs/validacao-login.gif" width="700px">
 </div> <br><br>
 
 **TOKEN**<br>
-Com o login bem sucedido, um token aleatório é gerado e armazenado no localStorage. Esse token será necessário para o acesso da rota '/dashboard'<br>
-Caso o usuário tente alterar a rota da aplicação para '/dashboard' sem antes realizar login, ele será retirecionado para a página inicial. 
-Entretanto, se o login foi efetivado, o usuário tera total acesso à página. Acesso que permanecerá até que decida encerrar sessão, quando o token será apagado. Dessa forma, para voltar a acessar a página, o usuário deverá fazer novo ligin.<br>
+Com o login bem sucedido, um token numérico aleatório é gerado e armazenado no LocalStorage. Esse token será necessário para o acesso da rota '/dashboard'<br>
+Caso o usuário tente alterar a rota da aplicação para '/dashboard' sem antes realizar login, ele será redirecionado para a página inicial. 
+Entretanto, se o login foi efetivado, o usuário tera total acesso à página. Acesso que permanecerá até que decida encerrar sessão, quando o token será apagado. Dessa forma, para voltar a acessar a página, o usuário deverá fazer novo login.<br>
 <div align="center">
   <img align="center" src="src/assets/imgs/token.gif" width="700px">
 </div> <br><br>
@@ -122,7 +122,7 @@ Ele conta com um campo para email que também possui validação por regex.<br>
 
 **CONFIRMAR EMAIL**<br>
 O popup "Confirmar Email" apacerá após um login bem sucedido.<br>
-Ele revela para qual endero o email de confimação será enviado.<br>
+Ele revela para qual endereço o email de confimação será enviado.<br>
 <div align="center">
   <img align="center" src="src/assets/imgs/popup-1.gif" width="700px">
 </div> <br><br>
@@ -132,7 +132,7 @@ Ele revela para qual endero o email de confimação será enviado.<br>
 ## Dashboard
 **RECUPERAÇÃO DOS DADOS**<br>
 Depois de realizar o cadastro e login, o usuário terá acesso à rota "/dasboard". 
-Nela pode-se verificar que as informações do localStorage são novamente recuperadas, dessa vez, para criar um pequeno perfil do usuário.<br>
+Nela pode-se verificar que as informações do LocalStorage são novamente recuperadas, dessa vez, para criar um pequeno perfil do usuário.<br>
 <div align="center">
   <img align="center" src="src/assets/imgs/dashboard.gif" width="700px">
 </div> <br><br>
